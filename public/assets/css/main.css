@@ -1,0 +1,131 @@
+/* main.css */
+
+/* 1. Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Root Variables */
+:root {
+  --mavis-bg: #101419;
+  --mavis-primary: #2d8fdf;
+  --mavis-accent: #d767b7;
+  --mavis-text: #e0e4e8;
+  --mavis-muted: #6e7781;
+  --mavis-border: #1f2a34;
+  --mavis-overlay: rgba(16, 20, 25, 0.85);
+  --mavis-gradient: linear-gradient(145deg, #2d8fdf, #d767b7);
+  --mavis-radius: 12px;
+  --mavis-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --mavis-transition: all 0.3s ease;
+}
+
+/* 3. Base Typography */
+body {
+  background-color: var(--mavis-bg);
+  color: var(--mavis-text);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--mavis-primary);
+}
+
+a {
+  color: var(--mavis-accent);
+  text-decoration: none;
+  transition: var(--mavis-transition);
+}
+a:hover {
+  color: var(--mavis-primary);
+}
+
+/* 4. Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: var(--mavis-overlay);
+  border: 1px solid var(--mavis-border);
+  border-radius: var(--mavis-radius);
+  box-shadow: var(--mavis-shadow);
+  padding: 1.5rem;
+  transition: var(--mavis-transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* 5. Buttons */
+button,
+.btn {
+  background: var(--mavis-gradient);
+  color: #fff;
+  border: none;
+  border-radius: var(--mavis-radius);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--mavis-transition);
+}
+button:hover,
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* 6. Forms */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1f25;
+  border: 1px solid var(--mavis-border);
+  border-radius: var(--mavis-radius);
+  color: var(--mavis-text);
+  font-family: inherit;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--mavis-primary);
+  box-shadow: 0 0 5px var(--mavis-primary);
+}
+
+/* 7. Responsive Touch */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
